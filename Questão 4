@@ -1,0 +1,43 @@
+a)
+def evaluate_condition_a(A, B, C):
+    # Sentença a: verdadeira quando A ou B são verdadeiras (mas não ambas) e C é falsa
+    return ((A or B) and not (A and B)) and not C
+
+# Testar todas as combinações possíveis de A, B e C para a alternativa a)
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_a = evaluate_condition_a(A, B, C)
+            print(f"A={A}, B={B}, C={C} => Resultado da sentença a: {result_a}")
+
+b)
+def evaluate_condition_b(A, B, C):
+    # Sentença b: falsa apenas quando A ou B são verdadeiras (mas não ambas) e C é falsa
+    return not ((A or B) and not (A and B) and not C)
+
+# Testar todas as combinações possíveis de A, B e C para a alternativa b)
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_b = evaluate_condition_b(A, B, C)
+            print(f"A={A}, B={B}, C={C} => Resultado da sentença b: {result_b}")
+
+As duas alternativas juntas: 
+
+def evaluate_conditions(A, B, C):
+    # a) Sentença verdadeira quando A ou B são verdadeiras (mas não ambas) e C é falsa
+    result_a = ((A or B) and not (A and B)) and not C
+    
+    # b) Sentença falsa apenas quando A ou B são verdadeiras (mas não ambas) e C é falsa
+    result_b = not ((A or B) and not (A and B) and not C)
+    
+    return result_a, result_b
+
+# Testar todas as combinações possíveis de A, B e C
+for A in [True, False]:
+    for B in [True, False]:
+        for C in [True, False]:
+            result_a, result_b = evaluate_conditions(A, B, C)
+            print(f"A={A}, B={B}, C={C} => Resultado da sentença a: {result_a}, Resultado da sentença b: {result_b}")
+
+
