@@ -1,0 +1,14 @@
+A = True
+B = False
+C = True
+
+# Expressões
+a = A and (B or C)               # A ^ (B v C)
+b = (A and B) or C              # (A ^ B) v C
+c = (A and B) or C              # (A ^ B)’ v C
+d = not A or (not B and C)     # A’ v (B’ ^ C)
+
+print(f"a) {a}")
+print(f"b) {b}")
+print(f"c) {c}")
+print(f"d) {d}")
